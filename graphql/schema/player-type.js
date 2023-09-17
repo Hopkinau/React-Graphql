@@ -5,7 +5,7 @@
 // This function is used to parse GraphQL query strings into the standard GraphQL syntax
 // https://www.npmjs.com/package/graphql-tag
 const gql = require('graphql-tag');
-export const playersType = gql`
+const playersType = gql`
   type PlayerType {
     _id: ID
     name: String
@@ -28,3 +28,4 @@ export const playersType = gql`
     addPlayer(input: PlayerInput): PlayerType
   }
 `;
+module.exports = playersType;

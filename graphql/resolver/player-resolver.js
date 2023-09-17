@@ -1,4 +1,4 @@
-const PlayerModel = require('../model/player-model');
+const PlayerModel = require('../../models/player');
 const Joi = require('joi');
 
 const playerResolver = {
@@ -30,7 +30,7 @@ const playerResolver = {
       if (result.error) {
         throw new Error(result.error.message);
       }
-      const player = new PlayerModel(args.input);
+      let player = new PlayerModel(args.input);
       return await player.save();
     },
   },
