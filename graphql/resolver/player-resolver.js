@@ -1,4 +1,4 @@
-const PlayerModel = require('../../models/player');
+const PlayerModel = require('../../models/team');
 const Joi = require('joi');
 
 const playerResolver = {
@@ -24,7 +24,7 @@ const playerResolver = {
         name: Joi.string().required(),
         age: Joi.number().required(),
         position: Joi.string().required(),
-        team: Joi.string().required(),
+        country: Joi.string().required(),
       });
       const result = schema.validate(args.input);
       if (result.error) {

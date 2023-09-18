@@ -4,6 +4,6 @@ const playerSchema = new Schema({
   name: String,
   age: Number,
   position: String,
-  team: String,
+  country: String,
 });
 module.exports = mongoose.model('Player', playerSchema);

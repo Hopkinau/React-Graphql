@@ -5,27 +5,27 @@
 // This function is used to parse GraphQL query strings into the standard GraphQL syntax
 // https://www.npmjs.com/package/graphql-tag
 const gql = require('graphql-tag');
-const playersType = gql`
-  type PlayerType {
+const teamType = gql`
+  type TeamType {
     _id: ID
     name: String
-    age: Int
-    position: String
-    country: String
+    location: String
+    player: ID!
+    createdAt: String!
+    updatedAt: String!
   }
-  input PlayerInput {
+  input TeamInput {
     _id: ID
     name: String
-    age: Int
-    position: String
-    country: String
+    location: String
+    player: ID!
   }
   type Query {
-    player(id: ID): PlayerType
-    players: [PlayerType]
+    getTeam(id: ID!): TeamType
+    getTeams: [TeamType]
   }
   type Mutation {
-    addPlayer(input: PlayerInput): PlayerType
+    addTeam(input: TeamInput): TeamType
   }
 `;
-module.exports = playersType;
+module.exports = teamType;
