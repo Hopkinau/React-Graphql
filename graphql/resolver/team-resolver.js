@@ -1,4 +1,4 @@
-const TeamModel = require('../../models/player');
+const TeamModel = require('../../models/team');
 const Joi = require('joi');
 
 const teamResolver = {
@@ -22,7 +22,7 @@ const teamResolver = {
     addTeam: async (parent, args) => {
       const schema = Joi.object({
         name: Joi.string().required(),
-        location: Joi.number().required(),
+        location: Joi.string().required(),
       });
       const result = schema.validate(args.input);
       if (result.error) {

@@ -1,4 +1,4 @@
-const PlayerModel = require('../../models/team');
+const PlayerModel = require('../../models/player');
 const Joi = require('joi');
 
 const playerResolver = {
